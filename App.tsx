@@ -1,7 +1,11 @@
 import Counter from './components/Counter';
+import FlatList from './components/FlatList';
 
 function App(): JSX.Element {
-  return <Counter />;
+  return (
+    <FlatList />
+    // <Counter />
+  );
 }
 
 export default App;

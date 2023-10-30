@@ -4,20 +4,23 @@ import { Text, View, StyleSheet, TouchableHighlight } from 'react-native';
 export default (): JSX.Element => {
   const [count, setCount] = useState(0);
   return (
-    <View style={styles.container}>
-      <TouchableHighlight
-        style={styles.button}
-        onPress={() => setCount(prev => prev - 1)}
-        underlayColor="#ccc">
-        <Text style={styles.btnText}>-</Text>
-      </TouchableHighlight>
-      <Text style={styles.btnText}>{count}</Text>
-      <TouchableHighlight
-        underlayColor="#ccc"
-        style={styles.button}
-        onPress={() => setCount(prev => prev + 1)}>
-        <Text style={styles.btnText}>+</Text>
-      </TouchableHighlight>
+    <View>
+      <Text style={styles.title}>Counter</Text>
+      <View style={styles.container}>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => setCount(prev => prev - 1)}
+          underlayColor="#ccc">
+          <Text style={styles.btnText}>-</Text>
+        </TouchableHighlight>
+        <Text style={styles.btnText}>{count}</Text>
+        <TouchableHighlight
+          underlayColor="#ccc"
+          style={styles.button}
+          onPress={() => setCount(prev => prev + 1)}>
+          <Text style={styles.btnText}>+</Text>
+        </TouchableHighlight>
+      </View>
     </View>
   );
 };
@@ -25,11 +28,12 @@ export default (): JSX.Element => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    borderColor: 'red',
     alignContent: 'center',
     justifyContent: 'center',
     gap: 10,
-    borderWidth: 1,
+  },
+  title: {
+    fontSize: 28,
   },
   button: {
     width: 50,
