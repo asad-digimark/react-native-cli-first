@@ -5,6 +5,7 @@ import TouchableHighlight from './components/Touchable Highlight';
 import TouchableOpacityRadioButton from './components/Touchable Opacity Radio Button';
 import SectionList from './components/SectionList';
 import ActivityIndicator from './components/ActivityIndicator';
+import Modal from './components/Modal';
 
 function App(): JSX.Element {
   return (
@@ -13,7 +14,8 @@ function App(): JSX.Element {
     // <GridWithList />
     // <TouchableOpacityRadioButton />
     // <SectionList />
-    <ActivityIndicator />
+    // <ActivityIndicator />
+    <Modal />
   );
 }
 
