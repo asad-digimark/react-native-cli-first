@@ -10,6 +10,8 @@ import Pressable from './components/Pressable';
 import Statusbar from './components/Statusbar';
 import Platform from './components/Platform';
 import Webview from './components/Webview';
+import StackNavigation from './components/Stack Navigation';
+import TabNavigation from './components/TabNavigation';
 
 function App(): JSX.Element {
   return (
@@ -23,7 +25,9 @@ function App(): JSX.Element {
     // <Pressable />
     // <Statusbar />
     // <Platform />
-    <Webview />
+    // <Webview />
+    // <StackNavigation />
+    <TabNavigation />
   );
 }
 
