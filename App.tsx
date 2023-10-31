@@ -7,6 +7,7 @@ import SectionList from './components/SectionList';
 import ActivityIndicator from './components/ActivityIndicator';
 import Modal from './components/Modal';
 import Pressable from './components/Pressable';
+import Statusbar from './components/Statusbar';
 
 function App(): JSX.Element {
   return (
@@ -17,7 +18,8 @@ function App(): JSX.Element {
     // <SectionList />
     // <ActivityIndicator />
     // <Modal />
-    <TouchableHighlight />
+    // <Pressable />
+    <Statusbar />
   );
 }
 
