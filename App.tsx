@@ -9,6 +9,7 @@ import Modal from './components/Modal';
 import Pressable from './components/Pressable';
 import Statusbar from './components/Statusbar';
 import Platform from './components/Platform';
+import Webview from './components/Webview';
 
 function App(): JSX.Element {
   return (
@@ -21,7 +22,8 @@ function App(): JSX.Element {
     // <Modal />
     // <Pressable />
     // <Statusbar />
-    <Platform />
+    // <Platform />
+    <Webview />
   );
 }
 
