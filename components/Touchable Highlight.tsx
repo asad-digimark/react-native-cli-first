@@ -12,7 +12,10 @@ export default () => {
   return (
     <View style={styles.container}>
       {colors.map(btnStyle => (
-        <TouchableHighlight style={[styles.btn, styles[btnStyle]]}>
+        <TouchableHighlight
+          onPress={() => {}}
+          underlayColor="#fff"
+          style={[styles.btn, styles[btnStyle]]}>
           <Text style={styles.btnText}>{btnStyle}</Text>
         </TouchableHighlight>
       ))}

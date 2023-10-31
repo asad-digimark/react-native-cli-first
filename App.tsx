@@ -17,7 +17,7 @@ function App(): JSX.Element {
     // <SectionList />
     // <ActivityIndicator />
     // <Modal />
-    <Pressable />
+    <TouchableHighlight />
   );
 }
 
