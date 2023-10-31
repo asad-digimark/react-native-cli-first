@@ -6,6 +6,7 @@ import TouchableOpacityRadioButton from './components/Touchable Opacity Radio Bu
 import SectionList from './components/SectionList';
 import ActivityIndicator from './components/ActivityIndicator';
 import Modal from './components/Modal';
+import Pressable from './components/Pressable';
 
 function App(): JSX.Element {
   return (
@@ -15,7 +16,8 @@ function App(): JSX.Element {
     // <TouchableOpacityRadioButton />
     // <SectionList />
     // <ActivityIndicator />
-    <Modal />
+    // <Modal />
+    <Pressable />
   );
 }
 
