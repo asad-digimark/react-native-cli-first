@@ -8,6 +8,7 @@ import ActivityIndicator from './components/ActivityIndicator';
 import Modal from './components/Modal';
 import Pressable from './components/Pressable';
 import Statusbar from './components/Statusbar';
+import Platform from './components/Platform';
 
 function App(): JSX.Element {
   return (
@@ -19,7 +20,8 @@ function App(): JSX.Element {
     // <ActivityIndicator />
     // <Modal />
     // <Pressable />
-    <Statusbar />
+    // <Statusbar />
+    <Platform />
   );
 }
 
