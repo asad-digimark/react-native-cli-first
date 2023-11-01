@@ -15,6 +15,7 @@ import TabNavigation from './components/TabNavigation';
 import Fetch from './components/Fetch';
 import Form from './components/Form';
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App(): JSX.Element {
   return (
@@ -33,7 +34,8 @@ function App(): JSX.Element {
     // <TabNavigation />
     // <Fetch />
     // <Form />
-    <Login />
+    // <Login />
+    <Register />
   );
 }
 
