@@ -13,6 +13,7 @@ import Webview from './components/Webview';
 import StackNavigation from './components/Stack Navigation';
 import TabNavigation from './components/TabNavigation';
 import Fetch from './components/Fetch';
+import Form from './components/Form';
 
 function App(): JSX.Element {
   return (
@@ -29,7 +30,8 @@ function App(): JSX.Element {
     // <Webview />
     // <StackNavigation />
     // <TabNavigation />
-    <Fetch />
+    // <Fetch />
+    <Form />
   );
 }
 
