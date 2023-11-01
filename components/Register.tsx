@@ -4,36 +4,73 @@ import {
   Text,
   TouchableOpacity,
   TextInput,
+  ScrollView,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Dimensions } from 'react-native';
+import { useState } from 'react';
 const height = Dimensions.get('window').height / 16;
 
 export default () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Register</Text>
-      <FormInput placeholder="Email" icon="user" keyboardType="email-address" />
-      <FormInput placeholder="Password" icon="lock" secureTextEntry />
-      <FormInput placeholder="Confirm Password" icon="lock" secureTextEntry />
-      <FormButton title="Sign Up" backgroundColor="#2e64e5" color="#fff" />
-      <Text style={{ textAlign: 'center' }}>
-        By registering, you confirm that you accept our Terms of service and
-        Privacy Policy
-      </Text>
-      <FormButton
-        title="Sign In with Google"
-        icon="google"
-        backgroundColor="orange"
-      />
-      <FormButton
-        title="Sign In with Facebook"
-        icon="facebook"
-        backgroundColor="skyblue"
-      />
-      <FormButton title="Have an account? Sign In" color="#2e64e5" />
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.heading}>Register</Text>
+        <FormInput
+          placeholder="Email"
+          icon="user"
+          value={email}
+          keyboardType="email-address"
+          onChangeText={v => setEmail(v)}
+        />
+        <FormInput
+          placeholder="Password"
+          icon="lock"
+          value={password}
+          secureTextEntry
+          onChangeText={v => setPassword(v)}
+        />
+        <FormInput
+          placeholder="Confirm Password"
+          icon="lock"
+          value={confirmPassword}
+          secureTextEntry
+          onChangeText={v => setConfirmPassword(v)}
+        />
+        <FormButton
+          title="Sign Up"
+          backgroundColor="#2e64e5"
+          color="#fff"
+          onPress={() => {
+            setEmail('');
+            setPassword('');
+            setConfirmPassword('');
+          }}
+        />
+        <Text style={{ textAlign: 'center' }}>
+          By registering, you confirm that you accept our Terms of service and
+          Privacy Policy
+        </Text>
+        <FormButton
+          title="Sign In with Google"
+          icon="google"
+          color="#de4d41"
+          backgroundColor="#f5e7ea"
+        />
+        <FormButton
+          title="Sign In with Facebook"
+          icon="facebook"
+          color="#4867aa"
+          backgroundColor="#e6eaf4"
+        />
+        <FormButton title="Have an account? Sign In" color="#2e64e5" />
+      </View>
+    </ScrollView>
   );
 };
 

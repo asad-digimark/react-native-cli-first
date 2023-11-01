@@ -7,15 +7,38 @@ import {
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { Dimensions } from 'react-native';
+import { useState } from 'react';
 const windowHeight = Dimensions.get('window').height;
 
 export default () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Login</Text>
-      <FormInput placeholder="Email" icon="user" keyboardType="email-address" />
-      <FormInput placeholder="Password" icon="lock" secureTextEntry />
-      <FormButton title="Login" backgroundColor="#2e64e5" color="#fff" />
+      <FormInput
+        placeholder="Email"
+        icon="user"
+        value={email}
+        keyboardType="email-address"
+        onChangeText={v => setEmail(v)}
+      />
+      <FormInput
+        placeholder="Password"
+        icon="lock"
+        value={password}
+        secureTextEntry
+        onChangeText={v => setPassword(v)}
+      />
+      <FormButton
+        title="Login"
+        backgroundColor="#2e64e5"
+        color="#fff"
+        onPress={() => {
+          setEmail('');
+          setPassword('');
+        }}
+      />
       <FormButton title="Forgot Password" color="#2e64e5" />
       <FormButton title="Don't have an account? Create here" color="#2e64e5" />
     </View>
