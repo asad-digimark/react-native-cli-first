@@ -14,6 +14,7 @@ import StackNavigation from './components/Stack Navigation';
 import TabNavigation from './components/TabNavigation';
 import Fetch from './components/Fetch';
 import Form from './components/Form';
+import Login from './components/Login';
 
 function App(): JSX.Element {
   return (
@@ -31,7 +32,8 @@ function App(): JSX.Element {
     // <StackNavigation />
     // <TabNavigation />
     // <Fetch />
-    <Form />
+    // <Form />
+    <Login />
   );
 }
 
