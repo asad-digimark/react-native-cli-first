@@ -10,7 +10,7 @@ import { Dimensions } from 'react-native';
 import { useState } from 'react';
 const windowHeight = Dimensions.get('window').height;
 
-export default () => {
+export default ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
@@ -30,17 +30,13 @@ export default () => {
         secureTextEntry
         onChangeText={v => setPassword(v)}
       />
-      <FormButton
-        title="Login"
-        backgroundColor="#2e64e5"
-        color="#fff"
-        onPress={() => {
-          setEmail('');
-          setPassword('');
-        }}
-      />
+      <FormButton title="Login" backgroundColor="#2e64e5" color="#fff" />
       <FormButton title="Forgot Password" color="#2e64e5" />
-      <FormButton title="Don't have an account? Create here" color="#2e64e5" />
+      <FormButton
+        title="Don't have an account? Create here"
+        color="#2e64e5"
+        onPress={() => navigation.navigate('Register')}
+      />
     </View>
   );
 };

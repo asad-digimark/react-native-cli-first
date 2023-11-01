@@ -16,6 +16,7 @@ import Fetch from './components/Fetch';
 import Form from './components/Form';
 import Login from './components/Login';
 import Register from './components/Register';
+import AuthNavigationStack from './components/AuthNavigationStack';
 
 function App(): JSX.Element {
   return (
@@ -35,7 +36,8 @@ function App(): JSX.Element {
     // <Fetch />
     // <Form />
     // <Login />
-    <Register />
+    // <Register />
+    <AuthNavigationStack />
   );
 }
 

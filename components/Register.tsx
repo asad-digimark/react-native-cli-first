@@ -12,7 +12,7 @@ import { Dimensions } from 'react-native';
 import { useState } from 'react';
 const height = Dimensions.get('window').height / 16;
 
-export default () => {
+export default ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -68,7 +68,11 @@ export default () => {
           color="#4867aa"
           backgroundColor="#e6eaf4"
         />
-        <FormButton title="Have an account? Sign In" color="#2e64e5" />
+        <FormButton
+          title="Have an account? Sign In"
+          color="#2e64e5"
+          onPress={() => navigation.navigate('Login')}
+        />
       </View>
     </ScrollView>
   );
