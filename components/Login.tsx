@@ -10,9 +10,23 @@ import { Dimensions } from 'react-native';
 import { useState } from 'react';
 const windowHeight = Dimensions.get('window').height;
 
+import { AuthContext } from './AuthProvider';
+import { useContext } from 'react';
+
 export default ({ navigation }) => {
+  const { login, user } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleSubmit = async () => {
+    try {
+      const res = await login(email, password);
+      console.log('res = ', res);
+    } catch (e) {
+      console.warn(e);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Login</Text>
@@ -30,7 +44,12 @@ export default ({ navigation }) => {
         secureTextEntry
         onChangeText={v => setPassword(v)}
       />
-      <FormButton title="Login" backgroundColor="#2e64e5" color="#fff" />
+      <FormButton
+        title="Login"
+        backgroundColor="#2e64e5"
+        color="#fff"
+        onPress={handleSubmit}
+      />
       <FormButton title="Forgot Password" color="#2e64e5" />
       <FormButton
         title="Don't have an account? Create here"

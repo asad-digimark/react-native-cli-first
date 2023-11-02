@@ -1,0 +1,17 @@
+{
+  "additionalUserInfo": { "isNewUser": true },
+  "user": {
+    "displayName": null,
+    "email": "asad@test.com",
+    "emailVerified": false,
+    "isAnonymous": false,
+    "metadata": "[Object]",
+    "multiFactor": "[Object]",
+    "phoneNumber": null,
+    "photoURL": null,
+    "providerData": "[Array]",
+    "providerId": "firebase",
+    "tenantId": null,
+    "uid": "JmvSmLWaeBdtBu4g5EB1fkyPkBN2"
+  }
+}

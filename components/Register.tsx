@@ -12,10 +12,31 @@ import { Dimensions } from 'react-native';
 import { useState } from 'react';
 const height = Dimensions.get('window').height / 16;
 
+import { useContext } from 'react';
+import { AuthContext } from './AuthProvider';
+
 export default ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  const { register, user } = useContext(AuthContext);
+
+  console.warn(user);
+
+  const handleSubmit = async () => {
+    try {
+      const res = await register(email, password);
+      console.log('res = ', res);
+      // @ts-ignore
+      alert('User Registered Successfully');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+    } catch (e) {
+      console.warn(e);
+    }
+  };
 
   return (
     <ScrollView>
@@ -46,11 +67,7 @@ export default ({ navigation }) => {
           title="Sign Up"
           backgroundColor="#2e64e5"
           color="#fff"
-          onPress={() => {
-            setEmail('');
-            setPassword('');
-            setConfirmPassword('');
-          }}
+          onPress={handleSubmit}
         />
         <Text style={{ textAlign: 'center' }}>
           By registering, you confirm that you accept our Terms of service and
